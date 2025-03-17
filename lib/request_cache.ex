@@ -10,6 +10,7 @@ defmodule RequestCache do
   ]
 
   @spec store(conn :: Plug.Conn.t, opts_or_ttl :: opts | pos_integer) :: Plug.Conn.t
+  @spec store(conn :: any, opts_or_ttl :: opts | pos_integer) :: {:ok, any}
   def store(conn, opts_or_ttl \\ [])
 
   def store(%Plug.Conn{} = conn, opts_or_ttl) do
